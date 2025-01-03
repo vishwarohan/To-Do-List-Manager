@@ -19,7 +19,7 @@ A responsive web application for managing tasks, built using React.js, Redux Too
 
 Before running the project, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [Node.js](https://nodejs.org/) (v10.2.3 or higher recommended)
 - npm (comes with Node.js) or yarn
 
 ---

@@ -25,47 +25,53 @@ const EditTaskPage = () => {
     };
 
     if (!task) {
-        return <p>Task not found!</p>;
+        return <p className="text-center text-red-500 text-lg">Task not found!</p>;
     }
 
     return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold mb-4">Edit Task</h1>
-            <div>
-                <label className="block mb-2">
-                    Title:
+        <div className="p-8 bg-gray-50 min-h-screen flex items-center justify-center">
+            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+                <h1 className="text-3xl font-bold text-center text-indigo-600 mb-6">Edit Task</h1>
+                <div>
+                    <label className="block text-lg font-semibold mb-2">Title:</label>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className="block w-full p-2 border rounded"
+                        className="block w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter task title"
                     />
-                </label>
-                <label className="block mb-2">
-                    Description:
+                    <label className="block text-lg font-semibold mb-2">Description:</label>
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                        className="block w-full p-2 border rounded"
+                        className="block w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter task description"
                     />
-                </label>
-                <label className="block mb-2">
-                    <input
-                        type="checkbox"
-                        checked={completed}
-                        onChange={() => setCompleted(!completed)}
-                    />
-                    Completed
-                </label>
-                <button
-                    onClick={handleUpdateTask}
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                    Update Task
-                </button>
-                <Link to="/" className="ml-4 text-blue-500 hover:underline">
-                    Back to Home
-                </Link>
+                    <label className="block mb-4 flex items-center">
+                        <input
+                            type="checkbox"
+                            checked={completed}
+                            onChange={() => setCompleted(!completed)}
+                            className="mr-2"
+                        />
+                        <span className="text-lg font-semibold">Completed</span>
+                    </label>
+                    <div className="flex justify-between items-center">
+                        <button
+                            onClick={handleUpdateTask}
+                            className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+                        >
+                            Update Task
+                        </button>
+                        <Link
+                            to="/"
+                            className="text-blue-500 hover:text-blue-600 font-medium"
+                        >
+                            Back to Home
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     );
